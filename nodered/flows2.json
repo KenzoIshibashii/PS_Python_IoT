@@ -1,0 +1,93 @@
+[
+    {
+        "id": "abab8d8224712f12",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "656342ef545fed38",
+        "type": "function",
+        "z": "abab8d8224712f12",
+        "name": "function 1",
+        "func": "var vagaAStatus = msg.payload.vagaA;\nvar vagaBStatus = msg.payload.vagaB;\n\nif (vagaAStatus){\n    if (vagaBStatus){\n        return { payload: \"AB\" };\n    }\n    else{\n        return { payload: \"A\" };\n    }\n}\nelse{\n    if (vagaBStatus){\n        return { payload: \"B\" };\n    }\n    else{\n        return { payload: \"X\" };\n    }\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 360,
+        "wires": [
+            [
+                "b2df606c1ae8fe43"
+            ]
+        ]
+    },
+    {
+        "id": "b2df606c1ae8fe43",
+        "type": "debug",
+        "z": "abab8d8224712f12",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "967b698aa7e66838",
+        "type": "mqtt in",
+        "z": "abab8d8224712f12",
+        "name": "",
+        "topic": "top/fiap/ps/kenzo/temp",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "b4b3aee5db6159d0",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 440,
+        "y": 360,
+        "wires": [
+            [
+                "656342ef545fed38"
+            ]
+        ]
+    },
+    {
+        "id": "b4b3aee5db6159d0",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]

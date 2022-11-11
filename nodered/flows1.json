@@ -1,0 +1,175 @@
+[
+    {
+        "id": "bb35d56f21b86ddd",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "300e5f9f83a7b34c",
+        "type": "inject",
+        "z": "bb35d56f21b86ddd",
+        "name": "Vaga A e B LIVRES",
+        "props": [
+            {
+                "p": "payload.vagaA",
+                "v": "true",
+                "vt": "bool"
+            },
+            {
+                "p": "payload.vagaB",
+                "v": "true",
+                "vt": "bool"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 290,
+        "y": 340,
+        "wires": [
+            [
+                "22eaa780033ae6b0"
+            ]
+        ]
+    },
+    {
+        "id": "448120e36c6ef91d",
+        "type": "inject",
+        "z": "bb35d56f21b86ddd",
+        "name": "Vaga B LIVRE",
+        "props": [
+            {
+                "p": "payload.vagaA",
+                "v": "false",
+                "vt": "bool"
+            },
+            {
+                "p": "payload.vagaB",
+                "v": "true",
+                "vt": "bool"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 270,
+        "y": 500,
+        "wires": [
+            [
+                "22eaa780033ae6b0"
+            ]
+        ]
+    },
+    {
+        "id": "beb40b2b3643b2b4",
+        "type": "inject",
+        "z": "bb35d56f21b86ddd",
+        "name": "Vaga A LIVRE",
+        "props": [
+            {
+                "p": "payload.vagaA",
+                "v": "true",
+                "vt": "bool"
+            },
+            {
+                "p": "payload.vagaB",
+                "v": "false",
+                "vt": "bool"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 270,
+        "y": 420,
+        "wires": [
+            [
+                "22eaa780033ae6b0"
+            ]
+        ]
+    },
+    {
+        "id": "53535dfe118397a8",
+        "type": "inject",
+        "z": "bb35d56f21b86ddd",
+        "name": "Vaga A e B OCUPADAS",
+        "props": [
+            {
+                "p": "payload.vagaA",
+                "v": "false",
+                "vt": "bool"
+            },
+            {
+                "p": "payload.vagaB",
+                "v": "false",
+                "vt": "bool"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 300,
+        "y": 580,
+        "wires": [
+            [
+                "22eaa780033ae6b0"
+            ]
+        ]
+    },
+    {
+        "id": "22eaa780033ae6b0",
+        "type": "mqtt out",
+        "z": "bb35d56f21b86ddd",
+        "name": "",
+        "topic": "top/fiap/ps/kenzo/temp",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "b4b3aee5db6159d0",
+        "x": 640,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "b4b3aee5db6159d0",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]
