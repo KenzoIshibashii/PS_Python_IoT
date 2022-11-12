@@ -36,5 +36,5 @@ Para simular a chegada/saída de um carro, clique no sensor desejado e arraste o
 
 # Link de vídeo demonstração
 Link para o video youtube:
-  - https://youtu.be/7zC_vNy9SwQ
+  - https://youtu.be/xFTONUzMjkI
 
